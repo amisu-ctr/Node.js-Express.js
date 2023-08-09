@@ -1,16 +1,11 @@
-const os = require('os');
+const path = require('path');
+console.log(path.sep); //returns path sign
 
-// info about current user
-const user = os.userInfo();
-console.log(user);
+const filePath = path.join('/content/', 'subfolder', 'test.txt');
+console.log(filePath); // \content\subfolder\test.txt
 
-//method return the system uptime in seconds
-console.log(`The system Uptime is ${os.uptime()} seconds`);
+const base = path.basename(filePath);
+console.log(base); //test.txt
 
-const currentOS = {
-  name: os.type(),
-  release: os.release(),
-  totalMem: os.totalmem(),
-  freeMem: os.freemem(),
-};
-console.log(currentOS);
+const absolute = path.resolve(__dirname, 'content', 'subfolder', 'test.txt');
+console.log(absolute); // C:\Users\DELL VENUE 11 PRO\desktop\Node.js-Express.js\content\subfolder\test.txt
