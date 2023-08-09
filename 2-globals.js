@@ -1,4 +1,9 @@
 //GLOBALS
+/**
+ * There are no window objects in node but global variables.
+ * No matter how complex an application becomes  these variables can be accessed anywhere.
+ * few of them below
+ */
 
 // __dirname  - path to current directory
 // __filename - file name
