@@ -18,4 +18,9 @@ router.put('/:id', updatePerson);
 
 router.delete('/:id', deletePerson);
 
+//THIS CAN BE USED WEHN WE HAVE MACHING ROUTES
+// router.route('/').get(getPeople).post(createPerson);
+// router.route('postman').post(createPersonPostman);
+// router.route('/:id').put(updatePerson).delete(deletePerson);
+
 module.exports = router;
