@@ -21,13 +21,13 @@ const handleNewUser = async (req, res) => {
         const newUser = {"username": user, "password": hashedPwd};
         usersDB.setUsers([...usersDB.users, newUser]);
         await fsPromises.writeFile(
-            path.join(__dirname, '..', 'mdoel', 'users.json'),
+            path.join(__dirname, '..', 'model', 'users.json'),
             JSON.stringify(usersDB.users)
         );
         console.log(usersDB.users);
         res.status(201).json({'success': `New user ${user} created!`})
     } catch (err) {
-        res.status(500).json({'messae': err.messae})
+        res.status(500).json({'messae': err.message})
     }
 }
 
