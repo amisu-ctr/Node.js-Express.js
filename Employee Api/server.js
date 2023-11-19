@@ -7,11 +7,13 @@ const { logger } = require('./middleware/logEvents');
 const errorHandler = require('./middleware/errorHandler');
 const verifyJWT = require('./middleware/verifyJWT')
 const cookieParser = require('cookie-parser')
+const credentials = require('./middleware/credentials')
 const PORT = process.env.PORT || 3500;
 
 // custom middleware logger
 app.use(logger);
 
+app.use(credentials)
 // Cross Origin Resource Sharing
 app.use(cors(corsOptions));
 
@@ -33,7 +35,9 @@ app.use('/subdir', express.static(path.join(__dirname, '/public')));
 app.use('/', require('./routes/root'));
 app.use('/register', require('./routes/register'))
 app.use('/auth', require('./routes/auth'))
-app.use('/refresh', require('./routes/refresh')) //The refresh endpoint will recieve the cookie that has the refreshToken and then will issue a new access token ones ones that accesstoken has expired 
+app.use('/refresh', require('./routes/refresh')) //The refresh endpoint will recieve the cookie that has the refreshToken and then will issue a new access token ones that accesstoken has expired 
+app.use('/logout', require('./routes/logout'))
+
 
 app.use(verifyJWT) // any route we do not need verfied by jwt, should be above this line
 app.use('/employees', require('./routes/api/employees'));

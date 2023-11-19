@@ -32,6 +32,7 @@ const handleLogin = async (req, res) => {
       process.env.REFRESH_TOKEN_SECRET,
       {expiresIn: '1d'}
     );
+    
     // creates an array of the users that are not loged in 
     const otherUsers = usersDB.users.filter(person => person.username !== foundUser.username)
     // Saving refreshToken with current user. Doin this will allow us to invalidate that refresh token as the current user logs out. If they logout before their one day expires
