@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const {getAllEmployees, createNewEmployee, updateEmployee, deleteEmployee, getEmployee} = require('../../controllers/employeesController')
+const verifyJWT = require('../../middleware/verifyJWT')
 
 router.route('/')
-    .get(getAllEmployees)
+    .get(verifyJWT ,getAllEmployees)
     .post(createNewEmployee)
     .put(updateEmployee)
     .delete(deleteEmployee)
