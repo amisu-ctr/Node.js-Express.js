@@ -43,7 +43,7 @@ const handleLogin = async (req, res) => {
       JSON.stringify(usersDB.users)
     )
     //  // refreshtoken stored into the online databasea above so that it can be crossed refrenced when it is sent back to create antoher access token
-    res.cookie('jwt', refreshToken, {httpOnly: true, maxAge: 24 * 60 * 60 * 1000}) //setting http only makes it unavailabe to javascript.
+    res.cookie('jwt', refreshToken, {httpOnly: true, sameSite: 'none', secure: true ,maxAge: 24 * 60 * 60 * 1000}) //setting http only makes it unavailabe to javascript.
     // sending accesstoken as json that the frontend dev can grab
     res.json({accessToken});
   } else {
