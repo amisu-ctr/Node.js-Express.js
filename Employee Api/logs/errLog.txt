@@ -1,1 +1,5 @@
-20231119	09:00:39	34127b19-be17-40e3-97d7-38f86f10c98c	ReferenceError: decoded is not defined
+20231126	13:33:00	a134b394-e863-4919-a220-5735c470cf18	Error: Not allowed by CORS GET / null
+20231126	13:38:55	1706c709-c627-440f-b675-497ff4b73f70	Error: Not allowed by CORS OPTIONS / https://www.google.com
+20231126	13:38:55	2a18da6d-a6a6-4036-9d47-2f65ace0e3ef	Error: Not allowed by CORS GET / https://www.google.com
+20231126	13:40:48	d309d571-e7dc-4d28-914d-010b2a5cd7f4	Error: Not allowed by CORS OPTIONS / https://www.google.com
+20231126	13:40:48	4ddeaa99-1443-4aeb-a842-96a9faf34189	Error: Not allowed by CORS GET / https://www.google.com
