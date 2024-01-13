@@ -1,6 +1,6 @@
 
 ## Overview
-a multiplayer Pong game built with Socket.io, Node.js, and Express.
+a multiplayer Pong game built with Socket.io, Node.js Express and HTML Canvas.
 
 ## How to Run
 
